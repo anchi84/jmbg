@@ -38,11 +38,21 @@ function parse() {
 	
 	if(control != controlFormula) {
 		msg = "Neispravan JMBG!";
-	} else if (day > 31) {
-		msg = "Neispravan dan rоđenja!";
-	} else if (month > 12) {
+	} else if (month > 12 || month < 1) {
 		msg = "Neispravan mesec rоđenja!";
-	} else if(region >= 60 && region <=69) {
+	} else if (day == 0) {
+		msg = "Neispravan dan rоđenja!";
+	} else if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (day > 31)) {
+		msg = "Neispravan dan rоđenja!";
+	} else if ((month == 4 || month == 6 || month == 9 || month == 11) && (day > 30)) {
+		msg = "Neispravan dan rоđenja!";
+	} else if (month == 2 && prestupna(year) && day > 29) {
+		msg = "Neispravan dan rоđenja!";
+	} else if (month == 2 && !prestupna(year) && day > 28) {
+		msg = "Neispravan dan rоđenja!";
+	}
+
+	 else if(region >= 60 && region <=69) {
 		msg = "Neispravan region rоđenja!";
 	} else {
 		msg = "Ispravan JMBG!\n";
@@ -308,4 +318,9 @@ function create(msg) {
 	var _pre = document.createElement("pre");
 	_pre.appendChild(t); 
 	p.appendChild(_pre);
+}
+
+function prestupna(year) {
+	if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0 ))
+		return true;
 }
