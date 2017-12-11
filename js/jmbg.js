@@ -1,4 +1,4 @@
-var jmbg, day, month, year, region, gender, control, msg;
+var jmbg, day, month, year, region, country, gender, control, msg;
 
 function validate() {
 	jmbg = document.getElementById("jmbg").value;
@@ -37,7 +37,7 @@ function parse() {
 	} else if (month > 12) {
 		msg = "Neispravan mesec rоđenja!";
 	} else if(region >= 60 && region <=69) {
-		msg = "Neispravna regija rоđenja!";
+		msg = "Neispravan region rоđenja!";
 	} else {
 		msg = "Ispravan JMBG!\n";
 		msg += "Datum rođenja: " +day +"." +month +"." +year +".\n";
@@ -50,25 +50,240 @@ function parse() {
 		msg += "Pol: " +gender +"\n";
 
 		if(region >= 0 && region <=9) {
-			region = "Stranci bez državljanstva";
+			country = "Stranac bez državljanstva";
 		} else if(region >= 10 && region <=19) {
-			region = "Bosna i Hercegovina";
+			country = "Bosna i Hercegovina";
 		} else if(region >= 20 && region <=29) {
-			region = "Crna Gora";
+			country = "Crna Gora";
 		} else if(region >= 30 && region <=39) {
-			region = "Hrvatska";
+			country = "Hrvatska";
 		} else if(region >= 40 && region <=49) {
-			region = "Makedonija";
+			country = "Makedonija";
 		} else if(region >= 50 && region <=59) {
-			region = "Slovenija";
+			country = "Slovenija";
 		} else if(region >= 70 && region <=79) {
-			region = "Centralna Srbija";
+			country = "Centralna Srbija";
 		} else if(region >= 80 && region <=89) {
-			region = "Autonomna Pokrajina Vojvodina";
+			country = "Autonomna Pokrajina Vojvodina";
 		} else if(region >= 90 && region <=99) {
-			region = "Autonomna Pokrajina Kosovo i Metohija";
+			country = "Autonomna Pokrajina Kosovo i Metohija";
 		}
-		msg += "Region: " +region +"\n";
+
+		switch(region) {
+			case 1:
+				region = "u BiH";
+				break;
+			case 2:
+				region = "u Crnoj Gori";
+				break;
+			case 3:
+				region = "u Hrvatskoj";
+				break;
+			case 4:
+				region = "u Makedoniji";
+				break;
+			case 5:
+				region = "u Sloveniji";
+				break;
+			case 7:
+				region = "u Srbiji (bez pokrajina)";
+				break;
+			case 8:
+				region = "u Vojvodini";
+				break;
+			case 9:
+				region = "na Kosovu i Metohiji";
+				break;
+			case 10:
+				region = "Banja Luka";
+				break;
+			case 11:
+				region = "Bihać";
+				break;
+			case 12:
+				region = "Doboj";
+				break;
+			case 13:
+				region = "Goražde";
+				break;
+			case 14:
+				region = "Livno";
+				break;
+			case 15:
+				region = "Mostar";
+				break;
+			case 16:
+				region = "Prijedor";
+				break;
+			case 17:
+				region = "Sarajevo";
+				break;
+			case 18:
+				region = "Tuzla";
+				break;
+			case 19:
+				region = "Zenica";
+				break;
+			case 21:
+				region = "Podgorica, Danilovgrad, Kolašin";
+				break;
+			case 22:
+				region = "Bar, Ulcinj";
+				break;
+			case 23:
+				region = "Budva, Kotor, Tivat";
+				break;
+			case 24:
+				region = "Herceg Novi";
+				break;
+			case 25:
+				region = "Cetinje";
+				break;
+			case 26:
+				region = "Nikšić, Plužine, Šavnik";
+				break;
+			case 27:
+				region = "Berane, Rožaje, Plav, Andrijevica";
+				break;
+			case 28:
+				region = "Bijelo Polje, Mojkovac";
+				break;
+			case 29:
+				region = "Pljevlja, Žabljak";
+				break;
+			case 30:
+				region = "Osijek, Slavonija region";
+				break;
+			case 31:
+				region = "Bjelovar, Virovitica, Koprivnica, Pakrac, Podravina region";
+				break;
+			case 32:
+				region = "Varaždin, Međimurje region";
+				break;
+			case 33:
+				region = "Zagreb";
+				break;
+			case 34:
+				region = "Karlovac";
+				break;
+			case 35:
+				region = "Gospić, Lika region";
+				break;
+			case 36:
+				region = "Rijeka, Pula, Istra i Primorje region";
+				break;
+			case 37:
+				region = "Sisak, Banovina region";
+				break;
+			case 38:
+				region = "Split, Zadar, Dubrovnik, Dalmacija region";
+				break;
+			case 41:
+				region = "Bitola";
+				break;
+			case 42:
+				region = "Kumanovo";
+				break;
+			case 43:
+				region = "Ohrid";
+				break;
+			case 44:
+				region = "Prilep";
+				break;
+			case 45:
+				region = "Skopje";
+				break;
+			case 46:
+				region = "Strumica";
+				break;
+			case 47:
+				region = "Tetovo";
+				break;
+			case 48:
+				region = "Veles";
+				break;
+			case 49:
+				region = "Štip";
+				break;
+			case 71:
+                region = "Beograd region";
+                break;
+            case 72:
+                region = "Šumadija i Pomoravlje region";
+                break;
+            case 73:
+                region = "Niš region";
+                break;
+            case 74:
+                region = "Južna Morava region";
+                break;
+            case 75:
+                region = "Zaječar region";
+                break;
+            case 76:
+                region = "Podunavlje region";
+                break;
+            case 77:
+                region = "Podrinje i Kolubara region";
+                break;
+            case 78:
+                region = "Kraljevo region";
+                break;
+            case 79:
+                region = "Užice region";
+                break;
+            case 80:
+                region = "Novi Sad region";
+                break;
+            case 81:
+                region = "Sombor region";
+                break;
+            case 82:
+                region = "Subotica region";
+                break;
+            case 85:
+                region = "Zrenjanin region";
+                break;
+            case 86:
+                region = "Pančevo region";
+                break;
+            case 87:
+                region = "Kikinda region";
+                break;
+            case 88:
+                region = "Ruma region";
+                break;
+            case 89:
+                region = "Sremska Mitrovica region";
+                break;
+            case 91:
+                region = "Priština region";
+                break;
+            case 92:
+                region = "Kosovska Mitrovica region";
+                break;
+            case 93:
+                region = "Peć region";
+                break;
+            case 94:
+                region = "Đakovica region";
+                break;
+            case 95:
+                region = "Prizren region";
+                break;
+            case 96:
+                region = "Kosovsko Pomoravski okrug";
+                break;
+            default:
+            	region = "";
+            	break;
+        }
+
+		if(region) {
+			msg += "Mesto rođenja: " +country +" - " +region +"\n"; +"-" +region +"\n";
+		} else {
+			msg += "Mesto rođenja: " +country +"\n";
+		}	
 	}
 }
 
