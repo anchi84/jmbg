@@ -1,1 +1,43 @@
+body {
+	margin: 5%;
+	background: #1A2980;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
+	background: linear-gradient(to right, #26D0CE, #1A2980);
+	background-size: cover;
+	font-family: 
+}
 
+.btn {
+	background: #26D0CE;
+	border: 2px solid black;
+	color: black;
+	font-weight: bold;
+	font-size: 1em;
+	height: 2.5em;
+}
+
+#jmbg {
+	background: #fff;
+	border: 2px solid black;
+}
+
+h1, form, p, footer {
+	margin: 3%;
+}
+
+footer {
+	font-weight: bold;
+	margin-top: 15%;
+}
+
+a {
+	color: darkblue;
+}
+
+a:hover {
+	color: darkgreen;
+}
+
+a:visited {
+	color: darkorange;
+}
