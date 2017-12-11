@@ -1,6 +1,12 @@
 var jmbg, day, month, year, region, country, gender, control, msg;
+var date = new Date();
+var p = document.getElementById('res');
 
 function validate() {
+	if(p.hasChildNodes()) {
+		p.removeChild(p.childNodes[0]);
+	}
+
 	jmbg = document.getElementById("jmbg").value;
 	if (jmbg.length != 13) {
 		msg = "JMBG se sastoji od 13 cifara. Pokušajte ponovo!";
@@ -15,7 +21,7 @@ function parse() {
 	day = Number(jmbg.substring(0,2));
 	month = Number(jmbg.substring(2,4));
 	year = Number(jmbg.substring(4,7));
-	year = (year > 900) ? year + 1000 : year + 2000;
+	year = (year > 875) ? year + 1000 : year + 2000;
 	region = Number(jmbg.substring(7,9));
 	gender = Number(jmbg.substring(9, 12));
 	control = Number(jmbg[12]);
@@ -40,6 +46,15 @@ function parse() {
 		msg = "Neispravan region rоđenja!";
 	} else {
 		msg = "Ispravan JMBG!\n";
+
+		if(year > date.getFullYear()) {
+			msg += "Ali osoba sa ovim jmbg još uvek nije rоđena!\n";
+		} else if( year == date.getFullYear() && month > date.getMonth() + 1) {
+			msg += "Ali osoba sa ovim jmbg još uvek nije rоđena!\n";
+		} else if( year == date.getFullYear() && month == date.getMonth() + 1 && day > date.getDate()) {
+			msg += "Ali osoba sa ovim jmbg još uvek nije rоđena!\n";
+		}
+
 		msg += "Datum rođenja: " +day +"." +month +"." +year +".\n";
 		
 		if(gender <= 499) {
@@ -283,16 +298,14 @@ function parse() {
 			msg += "Mesto rođenja: " +country +" - " +region +"\n"; +"-" +region +"\n";
 		} else {
 			msg += "Mesto rođenja: " +country +"\n";
-		}	
+		}
 	}
 }
 
 function create(msg) {
-	var p = document.createElement('p');
 	var t = document.createTextNode(msg);
 	//Text in a <pre> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.
 	var _pre = document.createElement("pre");
 	_pre.appendChild(t); 
 	p.appendChild(_pre);
-	document.getElementsByTagName('main')[0].appendChild(p);
 }
