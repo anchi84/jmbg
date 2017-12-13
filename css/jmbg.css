@@ -3,26 +3,34 @@ body {
 	background: #1A2980;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
 	background: linear-gradient(to right, #26D0CE, #1A2980);
-	background-size: cover;
-	font-family: 
 }
 
-.btn {
+.button {
 	background: #26D0CE;
+	border-radius: 30%;
 	border: 2px solid black;
-	color: black;
+	height: 1.7em;
 	font-weight: bold;
-	font-size: 1em;
-	height: 2.5em;
 }
 
 #jmbg {
 	background: #fff;
 	border: 2px solid black;
+	height: 1.7em;
+	width: 9em;
 }
 
-h1, form, p, footer {
-	margin: 3%;
+header, main, footer, form, p {
+	margin: 0;
+	padding: 1%;
+}
+
+h1 {
+	text-indent: 7%;
+}
+
+p {
+	font-style: italic;
 }
 
 footer {

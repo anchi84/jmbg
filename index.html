@@ -18,10 +18,10 @@
       <h1>JMBG validator!</h1>
     </header>
     <main>
-      <form>
+      <form onsubmit="keyFunction(event)">
         <label>Unesite vaš JMBG:</label>
         <input  id="jmbg" type="number" min="0"/>
-        <input type="button" value="Validacija" class="btn btn-sm" onclick="validate()"/>
+        <input type="button" value="Validacija" class="button" onclick="validate()"/>
       </form>
       <p>Jedinstveni matični broj građana (JMBG) je identifikacioni broj koji je dodeljivan svim građanima SFRJ počev od 1976. godine prema mestu rođenja, a za građane rođene pre 1976. godine prema prebivalištu. Ovaj lični broj je još uvek u upotrebi u državama nastalim od bivših republika SFRJ. <a href="https://sh.wikipedia.org/wiki/Jedinstveni_mati%C4%8Dni_broj_gra%C4%91ana" target="_blank">Opširnije...<a></p>
       <p id="res"></p>

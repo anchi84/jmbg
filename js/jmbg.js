@@ -305,7 +305,7 @@ function parse() {
         }
 
 		if(region) {
-			msg += "Mesto rođenja: " +country +" - " +region +"\n"; +"-" +region +"\n";
+			msg += "Mesto rođenja: " +country +" - " +region +"\n";
 		} else {
 			msg += "Mesto rođenja: " +country +"\n";
 		}
@@ -324,3 +324,16 @@ function prestupna(year) {
 	if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0 ))
 		return true;
 }
+
+function keyFunction(e) {
+	e.preventDefault();
+	validate();
+}
+
+
+/*$("form").submit(
+	function(e){
+		e.preventDefault();
+		validate();
+	}
+);*/
