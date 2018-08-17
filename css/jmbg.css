@@ -7,26 +7,28 @@ body {
 
 .button {
 	background: #26D0CE;
-	border-radius: 30%;
-	border: 2px solid black;
+	border-radius: 40%;
+	border: 2px solid #1A2980;
 	height: 1.7em;
+	color: #1A2980;
 	font-weight: bold;
 }
 
 #jmbg {
 	background: #fff;
-	border: 2px solid black;
+	border: 2px solid #1A2980;
 	height: 1.7em;
 	width: 9em;
 }
 
 header, main, footer, form, p {
 	margin: 0;
-	padding: 1%;
+	padding: 2%;
 }
 
 h1 {
 	text-indent: 7%;
+	color: #1A2980;
 }
 
 p {
@@ -34,12 +36,14 @@ p {
 }
 
 footer {
+	position: fixed;
+	bottom: 0;
 	font-weight: bold;
-	margin-top: 15%;
+	color: #1A2980;
 }
 
 a {
-	color: darkblue;
+	color: #1A2980;
 }
 
 a:hover {
